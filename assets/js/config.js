@@ -11,7 +11,8 @@ window.LP_CONFIG = {
   apiEndpoint: 'api/reserve.php',
 
   // true にすると送信先に POST せず、入力内容をコンソールに出してサンクスページへ進む（表示確認用）。
-  demoMode: false,
+  // GitHub Pages（*.github.io）では PHP が動かないため自動でデモ表示にする。
+  demoMode: /\.github\.io$/.test(location.hostname),
 
   // 店舗・営業時間・予約ルールのデータ
   bookingDataUrl: 'data/booking.json',

@@ -1,0 +1,5 @@
+# GitHub Pages の設定
+# api/ は PHP の処理と設定ファイル（通知先メールアドレス）なので公開しない
+exclude:
+  - api
+  - README.md

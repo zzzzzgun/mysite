@@ -437,6 +437,13 @@
 
   // ---------- 初期化 ----------
 
+  if (cfg.demoMode) {
+    var demo = document.createElement('p');
+    demo.className = 'demo-notice';
+    demo.textContent = 'デモ表示中：送信してもメールは送られず、完了ページに進むだけです。';
+    form.insertBefore(demo, form.firstChild);
+  }
+
   form.addEventListener('submit', onSubmit);
   form.addEventListener('focusin', markStarted);
   form.addEventListener('change', function (e) {

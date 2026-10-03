@@ -107,6 +107,11 @@ http://127.0.0.1:8080/ を開きます。メールを実際に送らずに確認
 `php -d sendmail_path="tee /tmp/mail.eml" -S 127.0.0.1:8080` のように起動するか、
 `assets/js/config.js` の `demoMode` を `true` にしてください（送信せずにサンクスページへ進みます）。
 
+## GitHub Pages でのデモ表示
+
+GitHub Pages（`*.github.io`）で開いた場合は自動でデモ表示になり、送信してもメールは送られず完了ページに進むだけです。
+`api/` フォルダは `_config.yml` で公開対象から外しています（通知先メールアドレスを公開しないため）。
+
 ## 公開前チェックリスト
 
 - [ ] `assets/js/config.js`：`gtmId`、`apiEndpoint`、`demoMode: false`

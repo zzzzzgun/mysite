@@ -348,3 +348,9 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
 .thanks__detail dd { margin: 0; font-size: 14px; }
 .thanks .checklist { text-align: left; }
 .thanks .btn { margin-top: 28px; }
+
+/* デモ表示（GitHub Pages など）の注意書き */
+.demo-notice {
+  margin-bottom: 20px; padding: 10px 14px; border-radius: var(--radius-sm);
+  background: #eef4ff; border: 1px solid #9db8ef; color: #1d4196; font-size: 13px; font-weight: 700;
+}
