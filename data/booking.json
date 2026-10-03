@@ -1,0 +1,121 @@
+{
+  "rules": {
+    "timezone": "Asia/Tokyo",
+    "bookableMonths": 12,
+    "closedWeekdays": [3],
+    "closedDates": ["01-01"],
+    "slotMinutes": 60,
+    "minLeadMinutes": 120
+  },
+  "groups": [
+    { "id": "tokyo23", "label": "東京23区" },
+    { "id": "kawasaki", "label": "神奈川県 川崎市" },
+    { "id": "yokohama", "label": "神奈川県 横浜市" }
+  ],
+  "stores": [
+    {
+      "id": "shinjuku",
+      "group": "tokyo23",
+      "name": "povo 新宿店（仮）",
+      "address": "東京都新宿区新宿3-0-0（仮）",
+      "access": "JR新宿駅 東口 徒歩3分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    },
+    {
+      "id": "shibuya",
+      "group": "tokyo23",
+      "name": "povo 渋谷店（仮）",
+      "address": "東京都渋谷区道玄坂2-0-0（仮）",
+      "access": "JR渋谷駅 ハチ公口 徒歩4分",
+      "hours": { "open": "11:00", "close": "21:00" }
+    },
+    {
+      "id": "ikebukuro",
+      "group": "tokyo23",
+      "name": "povo 池袋店（仮）",
+      "address": "東京都豊島区南池袋1-0-0（仮）",
+      "access": "JR池袋駅 東口 徒歩2分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    },
+    {
+      "id": "ginza",
+      "group": "tokyo23",
+      "name": "povo 銀座店（仮）",
+      "address": "東京都中央区銀座4-0-0（仮）",
+      "access": "東京メトロ銀座駅 A9出口 徒歩1分",
+      "hours": { "open": "11:00", "close": "20:00" }
+    },
+    {
+      "id": "ueno",
+      "group": "tokyo23",
+      "name": "povo 上野店（仮）",
+      "address": "東京都台東区上野4-0-0（仮）",
+      "access": "JR上野駅 不忍口 徒歩3分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    },
+    {
+      "id": "kitasenju",
+      "group": "tokyo23",
+      "name": "povo 北千住店（仮）",
+      "address": "東京都足立区千住2-0-0（仮）",
+      "access": "JR北千住駅 西口 徒歩2分",
+      "hours": { "open": "10:00", "close": "19:00" }
+    },
+    {
+      "id": "futakotamagawa",
+      "group": "tokyo23",
+      "name": "povo 二子玉川店（仮）",
+      "address": "東京都世田谷区玉川2-0-0（仮）",
+      "access": "東急二子玉川駅 東口 徒歩3分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    },
+    {
+      "id": "kawasaki-ekimae",
+      "group": "kawasaki",
+      "name": "povo 川崎駅前店（仮）",
+      "address": "神奈川県川崎市川崎区駅前本町0-0（仮）",
+      "access": "JR川崎駅 東口 徒歩2分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    },
+    {
+      "id": "musashikosugi",
+      "group": "kawasaki",
+      "name": "povo 武蔵小杉店（仮）",
+      "address": "神奈川県川崎市中原区小杉町3-0-0（仮）",
+      "access": "東急武蔵小杉駅 南口 徒歩3分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    },
+    {
+      "id": "yokohama-nishiguchi",
+      "group": "yokohama",
+      "name": "povo 横浜西口店（仮）",
+      "address": "神奈川県横浜市西区南幸1-0-0（仮）",
+      "access": "JR横浜駅 西口 徒歩3分",
+      "hours": { "open": "10:00", "close": "21:00" }
+    },
+    {
+      "id": "minatomirai",
+      "group": "yokohama",
+      "name": "povo みなとみらい店（仮）",
+      "address": "神奈川県横浜市西区みなとみらい2-0-0（仮）",
+      "access": "みなとみらい線 みなとみらい駅 徒歩2分",
+      "hours": { "open": "11:00", "close": "20:00" }
+    },
+    {
+      "id": "shinyokohama",
+      "group": "yokohama",
+      "name": "povo 新横浜店（仮）",
+      "address": "神奈川県横浜市港北区新横浜2-0-0（仮）",
+      "access": "JR新横浜駅 篠原口 徒歩4分",
+      "hours": { "open": "10:00", "close": "19:00" }
+    },
+    {
+      "id": "totsuka",
+      "group": "yokohama",
+      "name": "povo 戸塚店（仮）",
+      "address": "神奈川県横浜市戸塚区戸塚町0-0（仮）",
+      "access": "JR戸塚駅 東口 徒歩3分",
+      "hours": { "open": "10:00", "close": "20:00" }
+    }
+  ]
+}

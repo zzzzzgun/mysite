@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>来店予約を受け付けました｜povo</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/tracking.js"></script>
+</head>
+<body class="page-thanks">
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html">povo</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container container--narrow thanks">
+      <div class="thanks__icon" aria-hidden="true">✓</div>
+      <h1 class="thanks__title">来店予約を受け付けました</h1>
+      <p>ご入力いただいたメールアドレスに、予約受付メールをお送りしました。<br>ご来店を心よりお待ちしております。</p>
+
+      <dl class="thanks__detail" id="thanks-detail" hidden>
+        <div><dt>受付番号</dt><dd data-key="reservationId"></dd></div>
+        <div><dt>ご来店店舗</dt><dd data-key="storeName"></dd></div>
+        <div><dt>店舗住所</dt><dd data-key="storeAddress"></dd></div>
+        <div><dt>第1希望</dt><dd data-key="slot"></dd></div>
+      </dl>
+
+      <div class="checklist">
+        <h2 class="checklist__title">ご来店時にお持ちいただくもの</h2>
+        <ul>
+          <li>本人確認書類（運転免許証・マイナンバーカードなど）</li>
+          <li>お支払いに利用するクレジットカード</li>
+          <li>現在お使いのスマートフォン</li>
+          <li>のりかえの方：MNP予約番号（ワンストップ対応の場合は不要）</li>
+        </ul>
+      </div>
+
+      <p class="note">メールが届かない場合は、迷惑メールフォルダをご確認いただくか、ご来店店舗までお問い合わせください。</p>
+      <a class="btn" href="index.html">トップへ戻る</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__logo">povo</p>
+      <p class="site-footer__copy"><small>&copy; KDDI CORPORATION</small></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/booking.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var conv = null;
+      try {
+        conv = JSON.parse(sessionStorage.getItem('lp_conversion') || 'null');
+        // 再読み込みや直接アクセスでコンバージョンを二重計上しないよう、一度使ったら消す
+        sessionStorage.removeItem('lp_conversion');
+      } catch (e) { /* 何もしない */ }
+      if (!conv) return;
+
+      var detail = document.getElementById('thanks-detail');
+      var values = {
+        reservationId: conv.reservationId,
+        storeName: conv.storeName,
+        storeAddress: conv.storeAddress,
+        slot: window.LPBooking.formatDate(conv.date1) + ' ' + window.LPBooking.slotLabel(conv.time1, conv.slotMinutes || 60)
+      };
+      detail.querySelectorAll('[data-key]').forEach(function (dd) {
+        dd.textContent = values[dd.getAttribute('data-key')] || '';
+      });
+      detail.hidden = false;
+
+      // コンバージョンイベント。GTM ではこのイベントをトリガーに広告タグを発火させる
+      window.LPTracking.push('generate_lead', {
+        transaction_id: conv.reservationId,
+        store_id: conv.storeId,
+        store_name: conv.storeName,
+        contract_type: conv.contract,
+        device_model: conv.model,
+        current_carrier: conv.carrier
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# 設定ファイルへの直接アクセスを禁止（Apache）
+<Files "config.php">
+  Require all denied
+</Files>
